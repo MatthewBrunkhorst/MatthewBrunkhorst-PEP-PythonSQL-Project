@@ -99,8 +99,8 @@ def write_user_analytics(csv_file_path):
     with open(csv_file_path, "w", newline="", encoding="utf-8") as csv_file:
         writer = csv.writer(csv_file)
 
-        # headers = [description[0] for description in cursor.description]
-        # writer.writerow(headers)
+        headers = [description[0] for description in cursor.description]
+        writer.writerow(headers)
 
         for row in cursor:
             print(row)
