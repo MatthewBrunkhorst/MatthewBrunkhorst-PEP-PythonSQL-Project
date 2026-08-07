@@ -53,7 +53,7 @@ def main():
 
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
 def load_and_clean_users(file_path):
-    reader = csv.reader(file)
+    reader = csv.reader(file_path)
 
     for row in reader;
         if len(row) != 3
