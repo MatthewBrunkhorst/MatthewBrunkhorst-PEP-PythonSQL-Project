@@ -102,7 +102,7 @@ def write_ordered_calls(csv_file_path):
     query = "SELECT * FROM callLogs ORDER BY userId ASC, startTime ASC;"
     cursor.execute(query)
 
-    with open("output.csv", "w", newline="", encoding="utf-8") as csv_file:
+    with open(csv_file_path, "w", newline="", encoding="utf-8") as csv_file:
         writer = csv.writer(csv_file)
 
         # headers = [description[0] for description in cursor.description]
