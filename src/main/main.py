@@ -77,7 +77,9 @@ def load_and_clean_call_logs(file_path):
         for row in reader:
             if len(row) != 5:
                 continue
-            elif (row[0].isspace() or row[1].isspace()):
+            elif (row[0].isspace() or row[1].isspace() or row[2].isspace() or row[3].isspace() or row[4].isspace()):
+                continue
+            elif (row[0] == "" or row[1] == "" or row[2] == "" or row[3] == "" or row[4] == ""):
                 continue
 
 
