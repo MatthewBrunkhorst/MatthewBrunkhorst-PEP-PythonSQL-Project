@@ -57,13 +57,13 @@ def load_and_clean_users(file_path):
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            if len(row) != 5:
+            if len(row) != 2:
                 continue
             elif (row[0].isspace() or row[1].isspace()):
                 continue
 
             cursor.execute(
-                "INSERT INTO users (phoneNumber, startTime, endTime, direction, userId) VALUES (?, ?, ?, ?, ?)", row
+                "INSERT INTO users (firstName, lastName) VALUES (?, ?)", row
             )
 
 
@@ -82,7 +82,7 @@ def load_and_clean_call_logs(file_path):
 
 
             cursor.execute(
-                "INSERT INTO users (firstName, lastName) VALUES (?, ?)", row
+                "INSERT INTO users (phoneNumber, startTime, endTime, direction, userId) VALUES (?, ?, ?, ?, ?)", row
             )
 
 
