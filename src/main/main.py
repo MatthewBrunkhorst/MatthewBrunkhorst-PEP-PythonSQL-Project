@@ -60,6 +60,7 @@ def load_and_clean_users(file_path):
             if len(row) != 2:
                 continue
             elif (row[0].isspace() or row[1].isspace()):
+                continue
 
 
             cursor.execute(
