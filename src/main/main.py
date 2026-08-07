@@ -106,6 +106,23 @@ def write_user_analytics(csv_file_path):
             print(row)
             writer.writerow(row)
 
+    
+    
+    user_analytics = []
+    # Get the data from testUserAnalytics.csv
+    with open(csv_file_path, 'r') as file:
+
+        # Skip the first line
+        next(file)
+
+        # Read the contents of the file line by line, saving them to user_analytics
+        for line in file:
+            user_analytics.append(line.strip().split(','))
+
+    # order user_analytics by userId ascending
+    user_analytics.sort(key=lambda x: int(x[0]))
+    print(user_analytics)
+
 
 # This function will write the callLogs ordered by userId, then start time.
 # Then, write the ordered callLogs to orderedCalls.csv
