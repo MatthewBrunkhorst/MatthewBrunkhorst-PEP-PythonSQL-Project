@@ -120,6 +120,7 @@ def write_ordered_calls(csv_file_path):
         # writer.writerow(headers)
 
         for row in cursor:
+            print(row)
             writer.writerow(row)
 
 
