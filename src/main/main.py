@@ -82,7 +82,7 @@ def load_and_clean_call_logs(file_path):
 
 
             cursor.execute(
-                "INSERT INTO users (phoneNumber, startTime, endTime, direction, userId) VALUES (?, ?, ?, ?, ?)", row
+                "INSERT INTO callLogs (phoneNumber, startTime, endTime, direction, userId) VALUES (?, ?, ?, ?, ?)", row
             )
 
 
